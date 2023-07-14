@@ -11,7 +11,7 @@ while flag:
     rep_data = client_socket.recvfrom(1024000)[0]  # 接收消息
     response_data = rep_data.decode('utf-8')
     # 也可以将返回的数据进行处理后打印
-    print("接收到的数据为：%s" % type(response_data))
+    print(response_data)
     # 在客户端发送时，需要进行编码
     if res_data.decode('utf-8') == 'exit':
         flag = False

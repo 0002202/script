@@ -21,8 +21,7 @@ while flag:
         print(constant_info.end_msg)
 
     # 将返回的消息传入到ReturnData中进行处理
-    return_data = str(ReturnData(rep_data)).encode('utf-8')
-    # print(return_data.decode('utf-8'))
-    socket_server.sendto(return_data, src_address)      # 向客户端返回数据
+    return_data = ReturnData(rep_data).implement_def
+    socket_server.sendto(return_data.encode('utf-8'), src_address)      # 向客户端返回数据
 
 socket_server.close()
